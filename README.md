@@ -72,4 +72,68 @@ For more examples and ideas, visit:
 
 这说明docker的安装是成功的
 
+* [x]  安装 capsule
+
+```txt
+进入workspace
+cargo install capsule --git https://github.com/nervosnetwork/capsule.git --tag v0.1.3
+```
+
+build失败
+
+
+在wsl中安装一个Ubuntu发行版
+
+学习wsl Ubuntu和本地文件互操作，复制粘贴等
+
+测试apt-get和curl
+
+安装 Rust 和 Cargo
+
+curl https://sh.rustup.rs -sSf | sh
+
+source $HOME/.cargo/env 
+
+wsl下测试cargo成功
+
+linux中安装docker  ref: https://docs.docker.com/get-docker/
+
+
+更换源：
+```
+[source.crates-io] 
+registry = "https://github.com/rust-lang/crates.io-index" 
+replace-with = 'ustc' [source.ustc] 
+registry = "git://mirrors.ustc.edu.cn/crates.io-index" 
+# 如果所处的环境中不允许使用 git 协议，可以把上面的地址改为 
+# registry = "https://mirrors.ustc.edu.cn/crates.io-index" #[http] #check-revoke = false
+```
+
+然后执行
+cargo install capsule --git https://github.com/nervosnetwork/capsule.git --tag v0.1.3
+
+
+网络原因和其他原因报错较多，采用源码编译。
+
+cargo build --release
+
+错误整理：
+link cc not found：https://blog.csdn.net/Betterc5/article/details/101197571
+run custom build command for openssl-sys v0.9.55：https://zhuanlan.zhihu.com/p/138180011 + install pkg-config
+
+然后把release路径在etc里的配置文件里添加到全局变量
+
+![img4](en-resource://database/1649:0)
+
+现在我们可以全局运行capsule了
+
+```
+y00@LAPTOP-5ENAU1EP:/etc$ capsule check
+------------------------------
+docker  not found - Please install docker
+ckb-cli not found - The deployment feature is disabled
+------------------------------
+```
+
+
 
