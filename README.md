@@ -12,7 +12,7 @@ ckb --version
 ckb-cli --version
 ```
 
-
+![img1](./img1.jpg)
 
 * [x] CKB Quick Start
 
