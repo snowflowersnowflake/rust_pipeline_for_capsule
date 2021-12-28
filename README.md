@@ -18,5 +18,6 @@ ckb-cli --version
 
 run之后：
 
-
+![img2](./img2.png)
 ckb节点已经成功run
+
