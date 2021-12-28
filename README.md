@@ -21,3 +21,5 @@ run之后：
 ![img2](./img2.png)
 ckb节点已经成功run
 
+* [x] 添加ckb-cli到PATH环境变量中
+![img3](./img3.png)
