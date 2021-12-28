@@ -11,12 +11,12 @@ Capsule是一套供 Rust 开发者在 CKB 上开发脚本的工具，涵盖了�
 ckb --version 
 ckb-cli --version
 ```
-![f01eb0142c829d36a709e1fe23185e2e.png](en-resource://database/1634:1)
+
 
 
 * [x] CKB Quick Start
 
 run之后：
-![a44106a49681c4a2a10e905dfa7498fc.png](en-resource://database/1636:0)
+
 
 ckb节点已经成功run
