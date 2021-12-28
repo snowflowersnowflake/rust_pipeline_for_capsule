@@ -121,7 +121,9 @@ cargo install capsule --git https://github.com/nervosnetwork/capsule.git --tag v
 cargo build --release
 
 错误整理：
+
 link cc not found：https://blog.csdn.net/Betterc5/article/details/101197571
+
 run custom build command for openssl-sys v0.9.55：https://zhuanlan.zhihu.com/p/138180011 + install pkg-config
 
 然后把release路径在etc里的配置文件里添加到全局变量
