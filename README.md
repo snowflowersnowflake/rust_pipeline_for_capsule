@@ -1,5 +1,8 @@
 # rust_pipeline_for_capsule
 
+> 如果img不显示，采用纸飞机翻墙可见
+
+
 Capsule是一套供 Rust 开发者在 CKB 上开发脚本的工具，涵盖了脚本开发的整个生命周期：编写、调试、测试和部署。
 
 这里给出部署的流程和最终结果。
@@ -123,7 +126,7 @@ run custom build command for openssl-sys v0.9.55：https://zhuanlan.zhihu.com/p/
 
 然后把release路径在etc里的配置文件里添加到全局变量
 
-![img4](en-resource://database/1649:0)
+![img4](./img4.png)
 
 现在我们可以全局运行capsule了
 
