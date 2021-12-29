@@ -178,12 +178,7 @@ error: docker container exit with code Some(125)
 
 docker可能有问题，试试docker run hello-world
 提示CODE【0000】 
-```
-通过以下命令解决
-sudo mkdir /sys/fs/cgroup/systemd 
-sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
-```
-接下来重新创建capsule初始项目
+
 ```
 通过以下命令解决
 sudo mkdir /sys/fs/cgroup/systemd 
@@ -209,5 +204,38 @@ Cargo.toml  src
 ```
 从目录层级来看是正常的
 
+* [x] 构建项目
+
+```
+cd my-sudt 
+capsule build
+```
+获取到了二进制文件，构建成功
+```
+y00@LAPTOP-5ENAU1EP:/mnt/c/Users/29331/Desktop/rust_workspace/my-sudt/build/debug$ ls
+my-sudt
+```
+
+* [x] 检查toml中使用的库
+
+* [x] 编写 SUDT 脚本
+
+添加  core::arch::asm; 并用nightly版本rustc 1.59.0-nightly (404c8471a 2021-12-14)   
+
+```
+Building contract my-sudt
+   Compiling memchr v2.4.1
+   Compiling cc v1.0.72
+   Compiling cfg-if v1.0.0
+   Compiling cty v0.2.2
+   Compiling buddy-alloc v0.4.1
+   Compiling molecule v0.7.2
+   Compiling ckb-standalone-types v0.1.2
+   Compiling ckb-std v0.9.0
+   Compiling cstr_core v0.2.4
+   Compiling my-sudt v0.1.0 (/code/contracts/my-sudt)
+    Finished dev [unoptimized + debuginfo] target(s) in 9.39s
+Done
+```
 
 
