@@ -140,5 +140,74 @@ ckb-cli not found - The deployment feature is disabled
 ------------------------------
 ```
 
+* [x] 创建一个项目
+
+capsule new my-sudt
+
+发现文件和官方文档对不上。原来版本错了，重新下载最新版本再重复一次上述过程。
+
+```
+Capsule 0.7.2 #可见现在的版本号是latest
+Nervos Developer Tools Team
+Capsule CKB contract scaffold
+
+USAGE:
+    capsule [SUBCOMMAND]
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+SUBCOMMANDS:
+    check           Check environment and dependencies
+    new             Create a new project
+    new-contract    Create a new contract
+    build           Build contracts
+    run             Run command in contract build image
+    test            Run tests
+    deploy          Deploy contracts, edit deployment.toml to custodian deployment recipe.
+    clean           Remove contracts targets and binaries
+    debugger        CKB debugger
+    help            Prints this message or the help of the given subcommand(s)
+```
+
+Unable to find image 'thewawar/ckb-capsule:2021-12-25' locally
+
+docker: Error response from daemon: cgroups: cannot find cgroup mount destination: unknown.
+error: docker container exit with code Some(125)
+
+docker可能有问题，试试docker run hello-world
+提示CODE【0000】 
+```
+通过以下命令解决
+sudo mkdir /sys/fs/cgroup/systemd 
+sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
+```
+接下来重新创建capsule初始项目
+```
+通过以下命令解决
+sudo mkdir /sys/fs/cgroup/systemd 
+sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
+```
+接下来重新创建capsule初始项目
+```
+y00@LAPTOP-5ENAU1EP:/mnt/c/Users/29331/Desktop/rust_workspace/my-sudt$ ls
+
+Cargo.toml  README.md  build  capsule.toml  contracts  deployment.toml  migrations  tests
+
+y00@LAPTOP-5ENAU1EP:/mnt/c/Users/29331/Desktop/rust_workspace/my-sudt$ cd contracts/
+y00@LAPTOP-5ENAU1EP:/mnt/c/Users/29331/Desktop/rust_workspace/my-
+sudt/contracts$ ls
+
+my-sudt
+
+y00@LAPTOP-5ENAU1EP:/mnt/c/Users/29331/Desktop/rust_workspace/my-sudt/contracts$ cd my-sudt/
+y00@LAPTOP-5ENAU1EP:/mnt/c/Users/29331/Desktop/rust_workspace/my-
+sudt/contracts/my-sudt$ ls
+
+Cargo.toml  src
+```
+从目录层级来看是正常的
+
 
 
