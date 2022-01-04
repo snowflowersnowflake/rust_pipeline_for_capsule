@@ -238,4 +238,25 @@ Building contract my-sudt
 Done
 ```
 
+* [x] 检查默认测试
 
+```txt
+capsule test
+
+> 等待环境编译...
+running 2 tests
+thread 'tests::test_empty_args' panicked at 'error_string: Script(TransactionScriptError { source: Inputs[0].Lock, cause: ValidationFailure: see the error code 4 in the page https://nervosnetwork.github.io/ckb-script-error-codes/by-data-hash/58f4aa3a0126222b691e72ebe26f13917293d542a6e24691b06496e7bdb6823d.html#4 }), expected_error_code: 5', tests/src/tests.rs:18:5
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread 'tests::test_success' panicked at 'pass verification: Error { kind: Script, inner: TransactionScriptError { source: Inputs[0].Lock, cause: ValidationFailure: see the error code 4 in the page https://nervosnetwork.github.io/ckb-script-error-codes/by-data-hash/58f4aa3a0126222b691e72ebe26f13917293d542a6e24691b06496e7bdb6823d.html#4 } }', tests/src/tests.rs:77:10
+test tests::test_success ... FAILED
+test tests::test_empty_args ... FAILED
+
+failures:
+
+failures:
+    tests::test_empty_args
+    tests::test_success
+
+test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+```
+这里发现和官方文档的错误不太一样 虽然都是ValidationFailure 但是发生的线程不同，我们是'tests::test_empty_args'和 'tests::test_success' ，而官方教程是'tests::test_basic'，想必可能是版本变更造成的。
