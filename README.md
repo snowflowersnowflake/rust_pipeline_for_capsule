@@ -260,3 +260,5 @@ failures:
 test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
 ```
 这里发现和官方文档的错误不太一样 虽然都是ValidationFailure 但是发生的线程不同，我们是'tests::test_empty_args'和 'tests::test_success' ，而官方教程是'tests::test_basic'，想必可能是版本变更造成的。
+
+
